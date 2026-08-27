@@ -41,28 +41,7 @@ if (reservationForm && formStatus) {
       return;
     }
 
-    try {
-      const response = await fetch('/api/reservations', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        setStatus(data.message || 'A foglalás elküldése nem sikerült.', true);
-        return;
-      }
-
-      reservationForm.reset();
-      setStatus(data.message || 'Köszönjük! A foglalási kérésedet elküldtük.');
-    } catch (error) {
-      console.error('Reservation request failed:', error);
-      setStatus('A foglalás elküldése jelenleg nem működik. Próbáld meg újra később.', true);
-    }
+    setStatus('A foglalási e-mail funkció jelenleg ideiglenesen kikapcsolva. Hamarosan újra elérhető.');
+    reservationForm.reset();
   });
 }
