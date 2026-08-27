@@ -187,20 +187,23 @@
                 </a>
               </div>
             </div>
-            <form class="contact-form">
+            <form id="reservation-form" class="contact-form" method="POST" action="#">
               <label>
                 Név
-                <input type="text" placeholder="Teljes neved" />
+                <input type="text" name="name" placeholder="Teljes neved" required />
               </label>
               <label>
                 E-mail
-                <input type="email" placeholder="kapcsolat@pelda.hu" />
+                <input type="email" name="email" placeholder="kapcsolat@pelda.hu" required />
               </label>
               <label>
                 Üzenet
-                <textarea rows="4" placeholder="Milyen szettet szeretnél, és mikor lenne jó neked?"></textarea>
+                <textarea name="message" rows="4" placeholder="Milyen szettet szeretnél, és mikor lenne jó neked?" required></textarea>
               </label>
+              <input type="hidden" name="_subject" value="Lau Lash Atelier - időpontkérés" />
+              <input type="hidden" name="_captcha" value="false" />
               <button type="submit" class="button button-primary">Időpontot kérek</button>
+              <p id="form-status" class="form-status" aria-live="polite"></p>
             </form>
           </div>
         </section>

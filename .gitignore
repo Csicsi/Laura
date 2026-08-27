@@ -1,0 +1,24 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Docker
+.docker/
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+coverage/
+dist/
+build/
